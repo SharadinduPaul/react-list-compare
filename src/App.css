@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+:root{
+  --listA-hex: rgb(43, 205, 255);
+  --listB-hex: rgb(137, 64, 255);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 650px) {
+  .listContainer{
+    flex-direction: column !important;
+  }
+  .common, .unique1, .unique2, .uniqueAll{
+    flex-direction: column !important;
   }
 }
-
-.App-header {
-  background-color: #282c34;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
   min-height: 100vh;
+  max-width: 100vw;
+  color: black;
+  background-color: rgb(51, 51, 51);
+}
+.listContainer{
+  height: max-content;
   display: flex;
-  flex-direction: column;
+}
+.ListA, .ListB{
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  font-family: Verdana, sans-serif;
+
+  min-height: 50vh;
+  height: max-content;
+  flex: 1;
+
+  padding: 2vh;
+}
+.ListA{
+  background-color: var(--listA-hex);
+}
+.ListB{
+  background-color: var(--listB-hex);
+}
+.addtoList{
+  width: 250px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px 10px;
+  margin: 2vh 0.5vh;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.5s ease;
+}
+.addtoList:hover, .addtoList:focus{
+  background: rgb(255, 255, 255);
+}
+.addBtn{
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  margin: 2vh 0.5vh;
+  color: #fff;
+  background: transparent;
+}
+.computeContainer{
+  color: #fff;
+}
+.compute{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+}
+.compBtn{
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.compBtn:hover, .compBtn:active{
+  background-color: #fff;
+}
+.common, .unique1, .unique2, .uniqueAll{
+  --comp-hex: white;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 3px solid var(--comp-hex);
+  color: var(--comp-hex);
+  border-radius: 2vh;
+  margin: 1vh;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.common{
+  --comp-hex: rgb(79, 255, 79);
+}
+.unique1{
+  --comp-hex: var(--listA-hex);
+}
+.unique2{
+  --comp-hex: var(--listB-hex);
+}
+.uniqueAll{
+  --comp-hex: rgb(255, 57, 57);
+}
+.Citem{
+  text-align: center;
+  background: rgb(255, 255, 255, 0.2);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 2px 5px;
+  margin: 3px;
+  margin-left: 10px;
+  border-radius: 5px;
+  min-width: 150px;
+  width: max-content;
 }
